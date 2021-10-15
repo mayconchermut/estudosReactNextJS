@@ -1,4 +1,6 @@
 import { useState } from "react"
+import ContadorDisplay from "../../components/indireta1/ContadorDisplay"
+
 
 export default function contador(){
 
@@ -13,12 +15,18 @@ export default function contador(){
         color: "#fff",
         height: "100vh"}
 
+        const dec = () => setX(x - 1)
+        const inc = () => setX(x + 1)
+
     return(
         <div style={estilo}>
             <h1>Contador</h1>
-            <div>Valor: {x}</div>
-            <button onClick={() => setX(x - 1)}>-</button>
-            <button onClick={() => setX(x + 1)}>+</button>
+            <ContadorDisplay x={x} />
+            <div>
+            <button onClick={dec}>-</button>
+            <button onClick={inc}>+</button>
+
+            </div>
 
         </div>
     )
